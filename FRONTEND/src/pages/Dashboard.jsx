@@ -21,7 +21,7 @@ export const Dashboard = () => {
 
     const username =localStorage.getItem("username");
 
-    axios.get("http://localhost:3000/api/v1/user/onendonly",{
+    axios.get("https://payminba.onrender.com/api/v1/user/onendonly",{
         params: { username }
     })
 
@@ -42,7 +42,7 @@ export const Dashboard = () => {
 
       const userId = localStorage.getItem("userId");
       const token=localStorage.getItem("token");
-        axios.get("http://localhost:3000/api/v1/account/balance", {
+        axios.get("https://payminba.onrender.com/api/v1/account/balance", {
             params: { userId },
             headers:{
                 authorization : 'Bearer '+token

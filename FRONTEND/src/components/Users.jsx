@@ -9,7 +9,7 @@ export const Users = () => {
     const [filter, setFilter] = useState("");
     const userId = localStorage.getItem("userId");
     useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter,
+        axios.get("https://payminba.onrender.com/api/v1/user/bulk?filter=" + filter,
         { params: { userId }} )
             .then(response => {
                 setUsers(response.data.user)

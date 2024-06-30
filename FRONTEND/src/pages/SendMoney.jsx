@@ -15,7 +15,7 @@ export const SendMoney = () => {
 
     const userId = localStorage.getItem("userId");
     const token=localStorage.getItem("token");
-    axios.get("http://localhost:3000/api/v1/account/balance", {
+    axios.get("https://payminba.onrender.com/api/v1/account/balance", {
             params: { userId },
             headers:{
                 authorization : 'Bearer '+token
@@ -78,7 +78,7 @@ export const SendMoney = () => {
                 <button 
                     onClick={async () => {
                         try {
-                            const response = await axios.post("http://localhost:3000/api/v1/account/transfer", 
+                            const response = await axios.post("https://payminba.onrender.com/api/v1/account/transfer", 
                             {
                                 to: id,
                                 amount
