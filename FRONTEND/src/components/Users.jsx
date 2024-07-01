@@ -28,6 +28,7 @@ export const Users = () => {
 }
 
 function User({user}) {
+    
     const navigate = useNavigate();
 
     return <div className="flex justify-between shadow-md pb-2 m-4">

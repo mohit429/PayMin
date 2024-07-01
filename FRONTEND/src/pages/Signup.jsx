@@ -6,6 +6,8 @@ import { InputBox } from "../components/InputBox";
 import { SubHeading } from "../components/SubHeading";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faWallet } from '@fortawesome/free-solid-svg-icons';
 
 export const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -16,6 +18,12 @@ export const Signup = () => {
 
   return (
     <div className="bg-gradient-to-r from-gray-300 to-gray-700 h-screen flex items-center justify-center">
+      <button
+                onClick={() => navigate('/')}
+                className="absolute top-4 right-4 p-3 bg-gray-500 text-white rounded-full hover:bg-gray-600 transition flex items-center"
+            >
+                <FontAwesomeIcon icon={faHome} className="text-lg" /> 
+    </button>
       <div className="flex flex-col justify-center">
         <Heading label="Sign up" />
         <SubHeading label="Enter your information to create an account" />

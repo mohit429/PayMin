@@ -6,6 +6,8 @@ import { InputBox } from "../components/InputBox"
 import { SubHeading } from "../components/SubHeading"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faWallet } from '@fortawesome/free-solid-svg-icons';
 
 export const Signin = () => {
   const[username,setusername]=useState('');
@@ -13,6 +15,12 @@ export const Signin = () => {
   const navigate = useNavigate();
 
     return <div className="bg-gradient-to-r from-gray-300 to-gray-600   h-screen flex justify-center">
+    <button
+                onClick={() => navigate('/')}
+                className="absolute top-4 right-4 p-3 bg-gray-500 text-white rounded-full hover:bg-gray-600 transition flex items-center"
+            >
+                <FontAwesomeIcon icon={faHome} className="text-lg" /> 
+    </button>
     <div className="flex flex-col justify-center">
       <div className="rounded-lg bg- w-80 text-center p-2 h-max px-4">
         <Heading label={"Sign in"} />

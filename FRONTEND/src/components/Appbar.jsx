@@ -15,7 +15,7 @@ export const Appbar = () => {
                     className="bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded-full"
                     onClick={(e) => {
                         localStorage.removeItem("token");
-                        navigate("/signin");
+                        navigate("/");
                     }}
                 >
                     Logout
