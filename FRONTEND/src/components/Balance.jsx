@@ -1,12 +1,8 @@
 export const Balance = ({ value }) => {
-    return (
-        <div className="flex justify-between items-center bg-sky-500 rounded-2xl m-5 px-6 py-3 md:mx-25 lg:mx-40">
-            <div className="font-bold text-lg text-white">
-                Available Balance
-            </div>
-            <div className="font-bold text-lg text-white">
-                Rs {value}
-            </div>
-        </div>
-    );
+  return (
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center m-10">
+      <h2 className="text-3xl font-bold text-gray-700">Current Balance</h2>
+      <p className="text-2xl text-gray-900 mt-4">Rs. {value}</p>
+    </div>
+  );
 };

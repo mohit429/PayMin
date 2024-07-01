@@ -27,13 +27,19 @@ function Home() {
         </div>
       </nav>
       <section className="hero-bg text-gray-800 flex items-center justify-center">
-        <div className="flex flex-col items-center justify-center text-center px-6 animate-fade-in">
+        <div className="flex flex-col items-center justify-center text-center px-6 animate-fade-in w-3/5">
           <h1 className="text-6xl font-bold mb-8">Instant Money Transfer</h1>
-          <p className="text-2xl mb-8">Experience a seamless and secure way to transfer money instantly.</p>
-          <Link to="/features" className="bg-sky-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-2xl floating">Learn More</Link>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-2/5">
           <img src="Removal-166.png" alt="img" />
+        </div>
+      </section>
+      <section className="hero-bg text-gray-800 flex items-center justify-center">
+      <div className="flex flex-col w-2/5">
+          <img src="token1.png" alt="img" />
+        </div>
+        <div className="flex flex-col items-center justify-center text-center px-6 animate-fade-in w-3/5">
+          <h1 className="text-6xl font-bold m-8">Quick Balance Check</h1>
         </div>
       </section>
       <section id="features" className="container mx-auto px-6 py-20">
@@ -66,7 +72,7 @@ function Home() {
       </section>
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-lg">&copy; 2024 WalletApp. All rights reserved.</p>
+          <p className="text-lg">&copy; 2024 PayMin. All rights reserved.</p>
           <div className="mt-4">
             <a href="#" className="text-gray-400 hover:text-sky-500 mx-2">Privacy Policy</a>
             <a href="#" className="text-gray-400 hover:text-sky-500 mx-2">Terms of Service</a>
