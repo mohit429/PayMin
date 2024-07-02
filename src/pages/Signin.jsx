@@ -45,7 +45,7 @@ export const Signin = () => {
         <FontAwesomeIcon icon={faHome} className="text-lg" />
       </button>
       <div className="flex flex-col justify-center">
-        <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
+        <div className="rounded-lg  w-80 text-center p-2 h-max px-4">
           <Heading label={"Sign in"} />
           <SubHeading label={"Enter your credentials to access your account"} />
           <InputBox placeholder="mohitgurbani123@gmail.com" label={"Email"} onChange={(e) => setUsername(e.target.value)} />
