@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { Appbar } from "../components/Appbar";
 import { Balance } from "../components/Balance";
 import { Users } from "../components/Users";
+import { TransactionsSidebar } from "../components/TransactionsSidebar";  // Import the new component
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { TailSpin } from 'react-loader-spinner';
 
 export const Dashboard = () => {
     const [balance, setBalance] = useState(0);
-    const [loading, setLoading] = useState(true); // Loading state
+    const [loading, setLoading] = useState(true);
+    const [showTransactions, setShowTransactions] = useState(false);  // State to toggle sidebar
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -35,16 +37,16 @@ export const Dashboard = () => {
             })
             .then(response => {
                 setBalance(response.data);
-                setLoading(false); // Set loading to false after data is fetched
+                setLoading(false);
             })
             .catch(error => {
                 handleAxiosError(error);
-                setLoading(false); // Set loading to false if an error occurs
+                setLoading(false);
             });
         })
         .catch(error => {
             handleAxiosError(error);
-            setLoading(false); // Set loading to false if an error occurs
+            setLoading(false);
         });
     }, [navigate]);
 
@@ -62,14 +64,23 @@ export const Dashboard = () => {
     return (
         <div className="bg-sky-200 min-h-screen flex flex-col">
             <Appbar />
+            <button 
+                className="p-2 bg-blue-500 text-white rounded-full mt-4 mx-auto"
+                onClick={() => setShowTransactions(!showTransactions)}  // Toggle sidebar
+            >
+                {showTransactions ? 'Hide Transactions' : 'Show Transactions'}
+            </button>
             {loading ? (
                 <div className="flex flex-grow justify-center items-center">
                     <TailSpin height="50" width="50" color="gray" ariaLabel="loading" />
                 </div>
             ) : (
-                <div>
-                    <Balance value={balance} />
-                    <Users />
+                <div className="flex">
+                    <div className="flex-1">
+                        <Balance value={balance} />
+                        <Users />
+                    </div>
+                    {showTransactions && <TransactionsSidebar />}  {/* Conditionally render sidebar */}
                 </div>
             )}
         </div>
